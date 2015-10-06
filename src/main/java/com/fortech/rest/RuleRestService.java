@@ -10,9 +10,9 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import com.fortech.JPAmodels.MappingRule;
+import com.fortech.JPAmodels.MarketRule;
 import com.fortech.defaultobjects.DefaultInitialization;
-import com.fortech.rule.MappingRule;
-import com.fortech.rule.MarketRule;
 import com.fortech.rulejaxb.MappingRuleJAXB;
 import com.fortech.rulejaxb.MarketRuleJAXB;
 import com.fortech.wrapper.WrapperRuleJAXB;

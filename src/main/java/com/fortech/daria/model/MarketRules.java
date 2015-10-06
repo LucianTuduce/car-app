@@ -1,16 +1,15 @@
-package com.fortech.rule;
-
+package com.fortech.daria.model;
 
 import com.fortech.enumcategory.StockCategory;
 
-public class MarketRule {
+
+public class MarketRules {
 
 	private String countryNumber;
-	private Integer branch;
+	private int branch;
 	private StockCategory stockCategory;
-	private boolean active;
+	private Boolean active;
 	private String rule;
-	
 	
 	public String getCountryNumber() {
 		return countryNumber;
@@ -18,10 +17,10 @@ public class MarketRule {
 	public void setCountryNumber(String countryNumber) {
 		this.countryNumber = countryNumber;
 	}
-	public Integer getBranch() {
+	public int getBranch() {
 		return branch;
 	}
-	public void setBranch(Integer branch) {
+	public void setBranch(int branch) {
 		this.branch = branch;
 	}
 	public StockCategory getStockCategory() {
@@ -30,10 +29,10 @@ public class MarketRule {
 	public void setStockCategory(StockCategory stockCategory) {
 		this.stockCategory = stockCategory;
 	}
-	public boolean isActive() {
+	public Boolean getActive() {
 		return active;
 	}
-	public void setActive(boolean active) {
+	public void setActive(Boolean active) {
 		this.active = active;
 	}
 	public String getRule() {
@@ -43,7 +42,5 @@ public class MarketRule {
 		this.rule = rule;
 	}
 	
-	public String toString(){
-		return "[ "+countryNumber+" "+branch+" "+stockCategory+" "+active+" "+rule+" ]";
-	}
+	
 }

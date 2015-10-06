@@ -19,10 +19,10 @@ import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.fortech.JPAmodels.MappingRule;
+import com.fortech.JPAmodels.MarketRule;
 import com.fortech.convertXMLtoJSON.Convertor;
 import com.fortech.defaultobjects.DefaultInitialization;
-import com.fortech.rule.MappingRule;
-import com.fortech.rule.MarketRule;
 import com.fortech.rulejaxb.MappingRuleJAXB;
 import com.fortech.rulejaxb.MarketRuleJAXB;
 import com.fortech.ruletype.RuleType;

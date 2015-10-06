@@ -15,16 +15,16 @@ public class TargetVehicle implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="\"id\"")
+	@Column(name="\"id\"", unique=true, nullable=false)
 	private int id;
 
-	@Column(name="\"ruleId\"")
+	@Column(name="\"ruleId\"", nullable=false)
 	private int ruleId;
 
-	@Column(name="\"vehicleAttribute\"")
+	@Column(name="\"vehicleAttribute\"", length=45)
 	private String vehicleAttribute;
 
-	@Column(name="\"vehicleAttributeValue\"")
+	@Column(name="\"vehicleAttributeValue\"", length=45)
 	private String vehicleAttributeValue;
 
 	//bi-directional many-to-one association to InterpretationRule

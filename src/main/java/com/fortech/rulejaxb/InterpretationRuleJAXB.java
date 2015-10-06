@@ -7,43 +7,47 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import com.fortech.properties.CarAttribute;
-import com.fortech.properties.InterpretationInnerRule;
+import com.fortech.JPAmodels.InterpretationInnerRule;
+import com.fortech.JPAmodels.TargetVehicle;
 
 
-@XmlRootElement
+@XmlRootElement(name = "InterpretationRuleJAXB")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class InterpretationRuleJAXB {
 
 	@XmlElement(required = true)
-	private Long id;
-	@XmlElement
-	private List<CarAttribute> vehicleAttribute;
-	@XmlElement
-	private List<InterpretationInnerRule> rules;
+	private int id;
 
-	public Long getId() {
+	@XmlElement(required = true)
+	private List<TargetVehicle> targetVehicles;
+
+	@XmlElement(required = true)
+	private List<InterpretationInnerRule> interpretationInnerRules;
+
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public List<CarAttribute> getVehicleAttribute() {
-		return vehicleAttribute;
+	public List<TargetVehicle> getTargetVehicles() {
+		return targetVehicles;
 	}
 
-	public void setVehicleAttribute(List<CarAttribute> vehicleAttribute) {
-		this.vehicleAttribute = vehicleAttribute;
+	public void setTargetVehicles(List<TargetVehicle> targetVehicles) {
+		this.targetVehicles = targetVehicles;
 	}
 
-	public List<InterpretationInnerRule> getRules() {
-		return rules;
+	public List<InterpretationInnerRule> getInterpretationInnerRules() {
+		return interpretationInnerRules;
 	}
 
-	public void setRules(List<InterpretationInnerRule> rules) {
-		this.rules = rules;
+	public void setInterpretationInnerRules(
+			List<InterpretationInnerRule> interpretationInnerRules) {
+		this.interpretationInnerRules = interpretationInnerRules;
 	}
-
+	
+	
 }

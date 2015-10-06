@@ -15,16 +15,16 @@ public class MappingRule implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="\"id\"")
+	@Column(name="\"id\"", unique=true, nullable=false)
 	private int id;
 
-	@Column(name="\"sourceValue\"")
+	@Column(name="\"sourceValue\"", length=45)
 	private String sourceValue;
 
-	@Column(name="\"targetValue\"")
+	@Column(name="\"targetValue\"", length=45)
 	private String targetValue;
 
-	@Column(name="\"vehicleAttribute\"")
+	@Column(name="\"vehicleAttribute\"", length=45)
 	private String vehicleAttribute;
 
 	public MappingRule() {

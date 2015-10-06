@@ -20,7 +20,9 @@ import javax.xml.bind.JAXBException;
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.map.JsonMappingException;
 
+import com.fortech.JPAmodels.MappingRule;
 import com.fortech.defaultobjects.Initializator;
+import com.fortech.service.MapperRuleService;
 import com.fortech.service.MarketRuleService;
 import com.fortech.wrapper.WrapperRuleJAXB;
 
@@ -31,16 +33,25 @@ public class RuleRESTfulService {
 	@EJB
 	private MarketRuleService marketRuleService;
 	
-	@GET
+	@EJB
+	private MapperRuleService mapperRuleService;
+	
+	@POST
 	@Path("/get")
 	public Response getResponse(){
-		return Response.status(200).entity(marketRuleService.printCeva()).build();
+		MappingRule mappingRule = new MappingRule();
+		//mappingRule.setId(101);
+		mappingRule.setSourceValue("GOOD");
+		mappingRule.setTargetValue("Very GOODsa");
+		mappingRule.setVehicleAttribute("NEW Car");
+		//mapperRuleService.insertInDB(mappingRule);
+		return Response.status(200).entity(marketRuleService.toString()).build();
 	}
 	
 	@GET
 	@Path("/as")
 	public String getResponse1(){
-		return "sadfasdfsad";
+		return "sadfasdfsad+sdfs";
 	}
 	
 	@GET
@@ -71,7 +82,6 @@ public class RuleRESTfulService {
 				rules.add(Initializator.createJSONWrapperRuleForMarketRule());
 			}
 		}
-		marketRuleService.printCeva();
 		return rules;
 	}
 

@@ -12,7 +12,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-import com.fortech.rule.InterpretationRule;
+import com.fortech.JPAmodels.InterpretationRule;
 import com.fortech.rulejaxb.InterpretationRuleJAXB;
 import com.fortech.wrapper.WrapperRuleJAXB;
 

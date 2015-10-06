@@ -7,9 +7,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
 
+import com.fortech.JPAmodels.MappingRule;
+import com.fortech.JPAmodels.MarketRule;
 import com.fortech.enumcategory.StockCategory;
-import com.fortech.rule.MappingRule;
-import com.fortech.rule.MarketRule;
 import com.fortech.rulejaxb.MappingRuleJAXB;
 import com.fortech.rulejaxb.MarketRuleJAXB;
 import com.fortech.ruletype.RuleType;
@@ -19,17 +19,14 @@ public class DefaultInitialization {
 
 	public static MarketRule createDefaultMarketRuleJSON() {
 		MarketRule marketRule = new MarketRule();
-		marketRule.setActive(false);
-		marketRule.setBranch(14);
-		marketRule.setCountryNumber("BH-93-TUD");
+		marketRule.setActive((short) 0);
 		marketRule.setRule("private");
-		marketRule.setStockCategory(StockCategory.USED);
 		return marketRule;
 	}
 
 	public static MappingRule createDeafultMappingRuleJSON() {
 		MappingRule mappingRule = new MappingRule();
-		mappingRule.setId((long) 3);
+		mappingRule.setId(3);
 		mappingRule.setSourceValue("3000");
 		mappingRule.setTargetValue("4999");
 		mappingRule.setVehicleAttribute("good");
@@ -48,7 +45,7 @@ public class DefaultInitialization {
 
 	public static MappingRuleJAXB createDeafultMappingRuleJAXB() {
 		MappingRuleJAXB mappingRuleJAXB = new MappingRuleJAXB();
-		mappingRuleJAXB.setId((long) 1);
+		mappingRuleJAXB.setId(1);
 		mappingRuleJAXB.setSourceValue("2000");
 		mappingRuleJAXB.setTargetValue("2500");
 		mappingRuleJAXB.setVehicleAttribute("working");

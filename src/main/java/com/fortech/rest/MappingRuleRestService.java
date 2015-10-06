@@ -15,8 +15,8 @@ import javax.ws.rs.core.Response;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.PropertyException;
 
+import com.fortech.JPAmodels.MappingRule;
 import com.fortech.defaultobjects.DefaultInitialization;
-import com.fortech.rule.MappingRule;
 import com.fortech.rulejaxb.MappingRuleJAXB;
 import com.fortech.wrapper.WrapperRuleJAXB;
 

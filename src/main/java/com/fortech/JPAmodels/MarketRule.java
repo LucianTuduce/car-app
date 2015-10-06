@@ -1,6 +1,7 @@
 package com.fortech.JPAmodels;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 
@@ -12,15 +13,17 @@ import javax.persistence.*;
 @Table(name="\"MarketRule\"")
 @NamedQuery(name="MarketRule.findAll", query="SELECT m FROM MarketRule m")
 public class MarketRule implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
+	public static final String MARKETRULE_FIND_ALL = "MarketRule.findAll";
 
 	@EmbeddedId
 	private MarketRulePK id;
 
-	@Column(name="\"active\"")
+	@Column(name="\"active\"", nullable=false)
 	private short active;
 
-	@Column(name="\"rule\"")
+	@Column(name="\"rule\"", length=45)
 	private String rule;
 
 	public MarketRule() {

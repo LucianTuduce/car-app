@@ -4,28 +4,27 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
 
-
 /**
  * The persistent class for the "InterpretationRule" database table.
  * 
  */
 @Entity
-@Table(name="\"InterpretationRule\"")
-@NamedQuery(name="InterpretationRule.findAll", query="SELECT i FROM InterpretationRule i")
+@Table(name = "\"InterpretationRule\"")
+@NamedQuery(name = "InterpretationRule.findAll", query = "SELECT i FROM InterpretationRule i")
 public class InterpretationRule implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="\"id\"")
+	@Column(name = "\"id\"", unique = true, nullable = false)
 	private int id;
 
-	//bi-directional many-to-one association to InterpretationInnerRule
-	@OneToMany(mappedBy="interpretationRule")
-	private List<InterpretationInnerRule> interpretationInnerRules;
-
-	//bi-directional many-to-one association to TargetVehicle
-	@OneToMany(mappedBy="interpretationRule")
+	// bi-directional many-to-one association to TargetVehicle
+	@OneToMany(mappedBy = "interpretationRule")
 	private List<TargetVehicle> targetVehicles;
+
+	// bi-directional many-to-one association to InterpretationInnerRule
+	@OneToMany(mappedBy = "interpretationRule")
+	private List<InterpretationInnerRule> interpretationInnerRules;
 
 	public InterpretationRule() {
 	}
@@ -36,28 +35,6 @@ public class InterpretationRule implements Serializable {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public List<InterpretationInnerRule> getInterpretationInnerRules() {
-		return this.interpretationInnerRules;
-	}
-
-	public void setInterpretationInnerRules(List<InterpretationInnerRule> interpretationInnerRules) {
-		this.interpretationInnerRules = interpretationInnerRules;
-	}
-
-	public InterpretationInnerRule addInterpretationInnerRule(InterpretationInnerRule interpretationInnerRule) {
-		getInterpretationInnerRules().add(interpretationInnerRule);
-		interpretationInnerRule.setInterpretationRule(this);
-
-		return interpretationInnerRule;
-	}
-
-	public InterpretationInnerRule removeInterpretationInnerRule(InterpretationInnerRule interpretationInnerRule) {
-		getInterpretationInnerRules().remove(interpretationInnerRule);
-		interpretationInnerRule.setInterpretationRule(null);
-
-		return interpretationInnerRule;
 	}
 
 	public List<TargetVehicle> getTargetVehicles() {
@@ -80,6 +57,31 @@ public class InterpretationRule implements Serializable {
 		targetVehicle.setInterpretationRule(null);
 
 		return targetVehicle;
+	}
+
+	public List<InterpretationInnerRule> getInterpretationInnerRules() {
+		return this.interpretationInnerRules;
+	}
+
+	public void setInterpretationInnerRules(
+			List<InterpretationInnerRule> interpretationInnerRules) {
+		this.interpretationInnerRules = interpretationInnerRules;
+	}
+
+	public InterpretationInnerRule addInterpretationInnerRule(
+			InterpretationInnerRule interpretationInnerRule) {
+		getInterpretationInnerRules().add(interpretationInnerRule);
+		interpretationInnerRule.setInterpretationRule(this);
+
+		return interpretationInnerRule;
+	}
+
+	public InterpretationInnerRule removeInterpretationInnerRule(
+			InterpretationInnerRule interpretationInnerRule) {
+		getInterpretationInnerRules().remove(interpretationInnerRule);
+		interpretationInnerRule.setInterpretationRule(null);
+
+		return interpretationInnerRule;
 	}
 
 }

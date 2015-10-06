@@ -12,13 +12,13 @@ public class MarketRulePK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="\"countryNumber\"")
+	@Column(name="\"countryNumber\"", unique=true, nullable=false, length=45)
 	private String countryNumber;
 
-	@Column(name="\"branch\"")
+	@Column(name="\"branch\"", unique=true, nullable=false)
 	private int branch;
 
-	@Column(name="\"stockCategory\"")
+	@Column(name="\"stockCategory\"", unique=true, nullable=false)
 	private short stockCategory;
 
 	public MarketRulePK() {

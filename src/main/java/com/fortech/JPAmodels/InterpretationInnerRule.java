@@ -1,42 +1,42 @@
 package com.fortech.JPAmodels;
 
 import java.io.Serializable;
-import javax.persistence.*;
 
+import javax.persistence.*;
 
 /**
  * The persistent class for the "InterpretationInnerRule" database table.
  * 
  */
 @Entity
-@Table(name="\"InterpretationInnerRule\"")
-@NamedQuery(name="InterpretationInnerRule.findAll", query="SELECT i FROM InterpretationInnerRule i")
+@Table(name = "\"InterpretationInnerRule\"")
+@NamedQuery(name = "InterpretationInnerRule.findAll", query = "SELECT i FROM InterpretationInnerRule i")
 public class InterpretationInnerRule implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="\"id\"")
+	@Column(name = "\"id\"", unique = true, nullable = false)
 	private int id;
 
-	@Column(name="\"ruleId\"")
+	@Column(name = "\"ruleId\"", nullable = false)
 	private int ruleId;
 
-	@Column(name="\"vehicleAttribute\"")
+	@Column(name = "\"vehicleAttribute\"", length = 45)
 	private String vehicleAttribute;
 
-	@Column(name="\"vehicleAttributeValues\"")
+	@Column(name = "\"vehicleAttributeValues\"", length = 45)
 	private String vehicleAttributeValues;
 
-	//bi-directional many-to-one association to InterpretationRule
+	// bi-directional many-to-one association to InterpretationRule
 	@ManyToOne
-	@JoinColumn(name="\"id\"")
+	@JoinColumn(name = "\"id\"")
 	private InterpretationRule interpretationRule;
 
 	public InterpretationInnerRule() {
 	}
 
 	public int getId() {
-		return this.id;
+		return id;
 	}
 
 	public void setId(int id) {
@@ -44,7 +44,7 @@ public class InterpretationInnerRule implements Serializable {
 	}
 
 	public int getRuleId() {
-		return this.ruleId;
+		return ruleId;
 	}
 
 	public void setRuleId(int ruleId) {
@@ -52,7 +52,7 @@ public class InterpretationInnerRule implements Serializable {
 	}
 
 	public String getVehicleAttribute() {
-		return this.vehicleAttribute;
+		return vehicleAttribute;
 	}
 
 	public void setVehicleAttribute(String vehicleAttribute) {
@@ -60,7 +60,7 @@ public class InterpretationInnerRule implements Serializable {
 	}
 
 	public String getVehicleAttributeValues() {
-		return this.vehicleAttributeValues;
+		return vehicleAttributeValues;
 	}
 
 	public void setVehicleAttributeValues(String vehicleAttributeValues) {
@@ -68,11 +68,12 @@ public class InterpretationInnerRule implements Serializable {
 	}
 
 	public InterpretationRule getInterpretationRule() {
-		return this.interpretationRule;
+		return interpretationRule;
 	}
 
 	public void setInterpretationRule(InterpretationRule interpretationRule) {
 		this.interpretationRule = interpretationRule;
 	}
+	
 
 }

@@ -5,21 +5,21 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "MappingRuleJAXB")
+@XmlRootElement(name = "InterpretationInnerRuleJAXB")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class MappingRuleJAXB {
+public class InterpretationInnerRuleJAXB {
 
 	@XmlElement(required = true)
 	private int id;
 
 	@XmlElement(required = true)
-	private String sourceValue;
-	
-	@XmlElement(required = true)
-	private String targetValue;
+	private int ruleId;
 
 	@XmlElement(required = true)
 	private String vehicleAttribute;
+
+	@XmlElement(required = true)
+	private String vehicleAttributeValues;
 
 	public int getId() {
 		return id;
@@ -29,20 +29,12 @@ public class MappingRuleJAXB {
 		this.id = id;
 	}
 
-	public String getSourceValue() {
-		return sourceValue;
+	public int getRuleId() {
+		return ruleId;
 	}
 
-	public void setSourceValue(String sourceValue) {
-		this.sourceValue = sourceValue;
-	}
-
-	public String getTargetValue() {
-		return targetValue;
-	}
-
-	public void setTargetValue(String targetValue) {
-		this.targetValue = targetValue;
+	public void setRuleId(int ruleId) {
+		this.ruleId = ruleId;
 	}
 
 	public String getVehicleAttribute() {
@@ -52,11 +44,15 @@ public class MappingRuleJAXB {
 	public void setVehicleAttribute(String vehicleAttribute) {
 		this.vehicleAttribute = vehicleAttribute;
 	}
-	
-	@Override
-	public String toString() {
-		return "[ "+id+" "+vehicleAttribute+" "+sourceValue+" "+targetValue+" ]";
+
+	public String getVehicleAttributeValues() {
+		return vehicleAttributeValues;
 	}
 
-
+	public void setVehicleAttributeValues(String vehicleAttributeValues) {
+		this.vehicleAttributeValues = vehicleAttributeValues;
+	}
+	
 }
+
+

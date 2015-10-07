@@ -10,7 +10,7 @@ import com.fortech.JPAmodels.MappingRule;
 
 @Stateless
 @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
-public class MapperRuleService {
+public class MappingRuleService {
 
 	@PersistenceContext(unitName="car-application")
 	private EntityManager entityManager;

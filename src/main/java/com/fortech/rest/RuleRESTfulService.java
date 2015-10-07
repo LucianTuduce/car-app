@@ -22,7 +22,7 @@ import org.codehaus.jackson.map.JsonMappingException;
 
 import com.fortech.JPAmodels.MappingRule;
 import com.fortech.defaultobjects.Initializator;
-import com.fortech.service.MapperRuleService;
+import com.fortech.service.MappingRuleService;
 import com.fortech.service.MarketRuleService;
 import com.fortech.wrapper.WrapperRuleJAXB;
 
@@ -34,7 +34,7 @@ public class RuleRESTfulService {
 	private MarketRuleService marketRuleService;
 	
 	@EJB
-	private MapperRuleService mapperRuleService;
+	private MappingRuleService mapperRuleService;
 	
 	@POST
 	@Path("/get")
@@ -42,7 +42,7 @@ public class RuleRESTfulService {
 		MappingRule mappingRule = new MappingRule();
 		//mappingRule.setId(101);
 		mappingRule.setSourceValue("GOOD");
-		mappingRule.setTargetValue("Very GOODsa");
+		mappingRule.setTargetValue("Very GOOD");
 		mappingRule.setVehicleAttribute("NEW Car");
 		//mapperRuleService.insertInDB(mappingRule);
 		return Response.status(200).entity(marketRuleService.toString()).build();
@@ -56,7 +56,7 @@ public class RuleRESTfulService {
 	
 	@GET
 	@Path("/{ruleType}/{xmlORjson}/{idRule}")
-	@Produces({ "application/json", "application/xml" })
+	@Produces({ "application/xml" ,"application/json" })
 	public List<WrapperRuleJAXB> getRule(
 			@PathParam("xmlORjson") String xmlORjson,
 			@PathParam("ruleType") String ruleType,

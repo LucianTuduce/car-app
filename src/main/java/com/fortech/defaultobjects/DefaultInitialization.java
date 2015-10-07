@@ -115,6 +115,7 @@ public class DefaultInitialization {
 		marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 		marshaller.marshal(mappingRuleJAXB, stringWriter);
 		String xml = stringWriter.toString();
+		System.out.println(xml+"sdsdsq");
 		return xml;
 	}
 	

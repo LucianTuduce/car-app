@@ -27,7 +27,7 @@ import com.fortech.rulejaxb.MarketRuleJAXB;
 @TransactionAttribute(TransactionAttributeType.NOT_SUPPORTED)
 public class MarketRuleService {
 
-	@PersistenceContext(name = "Edu", type = PersistenceContextType.TRANSACTION)
+	@PersistenceContext(name = "car-application", type = PersistenceContextType.TRANSACTION)
 	public EntityManager entity;
 
 	/*
@@ -36,8 +36,8 @@ public class MarketRuleService {
 	public List<MarketRuleJAXB> getAllMarketRule() {
 
 		@SuppressWarnings("unchecked")
-		TypedQuery<MarketRule> query = (TypedQuery<MarketRule>) entity.createNativeQuery(
-				MarketRule.MARKETRULE_FIND_ALL, MarketRule.class);
+		TypedQuery<MarketRule> query = (TypedQuery<MarketRule>) entity.createQuery(
+				MarketRule.MARKETRULE_FIND_ALL);
 		List<MarketRule> marketRules = new ArrayList<MarketRule>(
 				query.getResultList());
 

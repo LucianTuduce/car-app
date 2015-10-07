@@ -34,24 +34,24 @@ public class RuleRESTfulService {
 	private MarketRuleService marketRuleService;
 	
 	@EJB
-	private MappingRuleService mapperRuleService;
+	private MappingRuleService mappingRuleService;
 	
 	@POST
 	@Path("/get")
 	public Response getResponse(){
 		MappingRule mappingRule = new MappingRule();
-		//mappingRule.setId(101);
-		mappingRule.setSourceValue("GOOD");
-		mappingRule.setTargetValue("Very GOOD");
-		mappingRule.setVehicleAttribute("NEW Car");
-		//mapperRuleService.insertInDB(mappingRule);
+		mappingRule.setId(2);
+		mappingRule.setSourceValue("OLD");
+		mappingRule.setTargetValue("Rebrand");
+		mappingRule.setVehicleAttribute("old car");
+		mappingRuleService.insertInDB(mappingRule);
 		return Response.status(200).entity(marketRuleService.toString()).build();
 	}
 	
 	@GET
 	@Path("/as")
 	public String getResponse1(){
-		return "sadfasdfsad+sdfs";
+		return "sadfasdfsad";
 	}
 	
 	@GET

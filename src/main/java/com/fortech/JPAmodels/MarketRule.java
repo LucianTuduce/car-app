@@ -10,7 +10,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="\"MarketRule\"")
+@Table(name="\"MarketRule\"", schema="DARIAD")
 @NamedQuery(name="MarketRule.findAll", query="SELECT m FROM MarketRule m")
 public class MarketRule implements Serializable {
 	

@@ -9,7 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name = "\"InterpretationInnerRule\"")
+@Table(name = "\"InterpretationInnerRule\"", schema="DARIAD")
 @NamedQuery(name = "InterpretationInnerRule.findAll", query = "SELECT i FROM InterpretationInnerRule i")
 public class InterpretationInnerRule implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +29,7 @@ public class InterpretationInnerRule implements Serializable {
 
 	// bi-directional many-to-one association to InterpretationRule
 	@ManyToOne
-	@JoinColumn(name = "\"id\"")
+	@JoinColumn(name = "\"id\"", insertable=false, updatable=false)
 	private InterpretationRule interpretationRule;
 
 	public InterpretationInnerRule() {

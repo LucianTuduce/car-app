@@ -9,7 +9,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name = "\"InterpretationRule\"")
+@Table(name = "\"InterpretationRule\"", schema="DARIAD")
 @NamedQuery(name = "InterpretationRule.findAll", query = "SELECT i FROM InterpretationRule i")
 public class InterpretationRule implements Serializable {
 	private static final long serialVersionUID = 1L;

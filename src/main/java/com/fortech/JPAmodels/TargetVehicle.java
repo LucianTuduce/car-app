@@ -9,7 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="\"TargetVehicle\"")
+@Table(name="\"TargetVehicle\"", schema="DARIAD")
 @NamedQuery(name="TargetVehicle.findAll", query="SELECT t FROM TargetVehicle t")
 public class TargetVehicle implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +29,7 @@ public class TargetVehicle implements Serializable {
 
 	//bi-directional many-to-one association to InterpretationRule
 	@ManyToOne
-	@JoinColumn(name="\"id\"")
+	@JoinColumn(name="\"id\"", insertable=false, updatable=false)
 	private InterpretationRule interpretationRule;
 
 	public TargetVehicle() {

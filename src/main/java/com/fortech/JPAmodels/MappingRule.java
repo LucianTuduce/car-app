@@ -9,7 +9,7 @@ import javax.persistence.*;
  * 
  */
 @Entity
-@Table(name="\"MappingRule\"")
+@Table(name="\"MappingRule\"", schema="DARIAD")
 @NamedQuery(name="MappingRule.findAll", query="SELECT m FROM MappingRule m")
 public class MappingRule implements Serializable {
 	private static final long serialVersionUID = 1L;
